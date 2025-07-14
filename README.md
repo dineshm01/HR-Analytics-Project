@@ -1,58 +1,81 @@
 # HR Analytics Project
 
-A data-driven HR Analytics project conducted using Python, focusing on employee attrition analysis and various factors influencing retention within an organization. This project includes Exploratory Data Analysis (EDA), visualization, and actionable insights from HR datasets.
+This is an HR Analytics project implemented in Python. The goal is to analyze employee attrition patterns and understand which factors lead employees to leave the company. The project involves Exploratory Data Analysis (EDA) using a dataset related to employee satisfaction, evaluation, salary, promotion history, and other attributes.
 
-## 📂 Project Structure
+## Files Included
 
-* `HR Analytics.ipynb`: Jupyter Notebook with full analysis and visualizations
-* `HR_capstone_dataset.csv`: Dataset used for the analysis
-* `README.md`: This README file
+* **HR Analytics.ipynb**: Jupyter Notebook containing the complete Python code for the project.
+* **HR\_capstone\_dataset.csv**: Dataset used for analysis.
+* **README.md**: This project description.
 
-## 📝 Problem Statement
+## Problem Statement
 
-Employee retention is a significant challenge in HR management. The objective of this project is to analyze historical HR data to identify factors that lead to employee attrition, explore the impact of satisfaction levels, promotions, workloads, and other factors, and provide actionable insights to reduce attrition.
+The project aims to help HR teams understand the factors driving employee attrition through data analysis. By identifying patterns, the company can take proactive steps to improve retention.
 
-## 📊 Dataset Information
+## Dataset Details
 
-The dataset used is named `HR_capstone_dataset.csv` and contains 14,999 rows and 10 columns.
+The dataset contains 14,999 records and 10 columns with the following features:
 
-### Column Descriptions:
+* **satisfaction\_level**: Level of satisfaction from 0 to 1.
+* **last\_evaluation**: Last performance evaluation score from 0 to 1.
+* **number\_project**: Number of projects handled by the employee.
+* **average\_montly\_hours**: Monthly average working hours.
+* **time\_spend\_company**: Number of years the employee has spent in the company.
+* **Work\_accident**: Indicates if the employee had a work accident (1) or not (0).
+* **left**: Indicates if the employee left the company (1) or not (0).
+* **promotion\_last\_5years**: Indicates if the employee got a promotion in the last 5 years (1) or not (0).
+* **Department**: The department the employee belongs to.
+* **salary**: Salary level (low, medium, high).
 
-* `satisfaction_level`: A numeric value between 0 and 1 representing the employee's job satisfaction.
-* `last_evaluation`: A numeric score between 0 and 1 representing the employee’s last evaluation result.
-* `number_project`: The number of projects handled by the employee.
-* `average_montly_hours`: The employee’s average monthly working hours.
-* `time_spend_company`: The number of years the employee has been with the company.
-* `Work_accident`: Indicates whether the employee had a work accident (1 for yes, 0 for no).
-* `left`: Indicates whether the employee left the company (1 for yes, 0 for no).
-* `promotion_last_5years`: Indicates whether the employee was promoted in the last five years (1 for yes, 0 for no).
-* `Department`: The department where the employee worked (e.g., sales, technical, HR, etc.).
-* `salary`: The employee's salary category: low, medium, or high.
+## Analysis Performed
 
-##  Key Steps Performed
+### Initial Exploration
 
-1. **Data Cleaning:** Confirmed no missing values and validated data types.
-2. **Exploratory Data Analysis (EDA):** Analyzed distributions of satisfaction level, evaluation scores, and working hours; created correlation heatmaps; explored attrition patterns across departments, salary levels, and promotions.
-3. **Visualization Tools:** Used Matplotlib and Seaborn.
-4. **Insights Derived:** Lower satisfaction and higher workload were strongly linked to attrition. Sales and low-salary employees exhibited higher attrition. Very few employees were promoted in the last 5 years.
+* Checked basic info about dataset shape, columns, and missing values.
+* Verified counts of salary levels and work accidents.
 
-##  Sample Visualizations
+### Statistical Summary
 
-* Boxplots for attrition vs. satisfaction and working hours.
-* Heatmap for feature correlations.
-* Bar charts showing attrition by department and salary.
+* Used `.describe()` to understand distribution of numeric columns.
+* Used `.corr()` to examine correlations between numeric variables.
 
-##  Conclusions
+### Data Visualization
 
-Employee satisfaction and workload are key drivers for attrition. Companies should prioritize employee well-being and career growth to improve retention. Salary revisions may help reduce turnover in certain departments.
+All visualizations were created using `matplotlib` and `seaborn` to identify trends in attrition:
 
-##  Technologies Used
+* **Histogram of `last_evaluation` split by attrition (`left`)**
+* **Countplots of attrition (`left`) vs:**
 
-* Python (Pandas, NumPy)
-* Matplotlib & Seaborn for visualization
+  * `number_project`
+  * `time_spend_company`
+  * `Work_accident`
+  * `promotion_last_5years`
+  * `Department`
+  * `salary`
+
+
+## Key Insights from Visualizations
+
+* Employees with extreme evaluation scores (either very high or very low) had a higher chance of leaving.
+* More projects often correlated with higher attrition.
+* Attrition was higher among employees with longer tenure (`time_spend_company`).
+* Employees without promotions over 5 years showed higher attrition.
+* Sales department and low-salary employees exhibited higher attrition.
+* Work accidents did not have a strong impact on attrition.
+
+
+
+## Conclusions
+
+* Low satisfaction and high workload are leading to employee exits.
+* Lack of promotions contributes significantly to attrition.
+* Salaries and departments show notable patterns in turnover.
+
+
+## Technologies Used
+
+* Python (NumPy, Pandas)
+* Visualization: Matplotlib, Seaborn
 * Jupyter Notebook
 
-## 🔗 Project Resources
 
-* The dataset is provided as a CSV file.
-* Complete analysis is available in the Jupyter Notebook.
